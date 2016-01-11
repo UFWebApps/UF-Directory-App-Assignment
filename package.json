@@ -1,0 +1,17 @@
+{
+  "name": "Assignment3",
+  "version": "1.0.0",
+  "description": "Persisting data using MongoDB and Mongoose",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Medhir Bhargava",
+  "license": "MIT",
+  "dependencies": {
+    "mongoose": "^4.2.9"
+  },
+  "devDependencies": {
+    "should": "^7.1.1"
+  }
+}
