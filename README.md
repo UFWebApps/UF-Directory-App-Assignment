@@ -12,7 +12,7 @@ In this assignment, we will focus on persisting data by moving the JSON file to 
 If you take a look at MongoDB's [introductory documentation](https://docs.mongodb.org/getting-started/node/introduction/), you will notice there's quite a bit of code that has to be written to add, find, update, or delete data using their APIs. [Mongoose]() simplifies the process of communicating with MongoDB and also provides tools to organize/model the data into **schemas**. Schemas are used to pre-define the data's attributes, and the type each attribute will have. [Read this tutorial that discusses how to use Mongoose with Node.js](https://scotch.io/tutorials/using-mongoosejs-in-node-js-and-mongodb-applications) before continuing with the assignment.
 
 ### MongoLab
-MongoLab is an online service that will host your database in the cloud. While you could just run a local instance of MongoDB, registering for an account with MongoLab removes hassles surrounding installing the database on your machine. Make sure to [register for an account](https://mongolab.com/signup/) before completing the assignment. 
+MongoLab is an online service that will host your database in the cloud. While you could just run a local instance of MongoDB, registering for an account with MongoLab removes hassles surrounding installing the database on your machine. Make sure to [register for an account](https://mlab.com/signup/) before completing the assignment. 
 
 ### Assignment
 To port the listing data to MongoDB, you will be doing the following: 
