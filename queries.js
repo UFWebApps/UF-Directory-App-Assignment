@@ -13,9 +13,9 @@ var removeCable = function() {
     and remove this listing from your database and log the document to the console. 
    */
 };
-var updatePhelpsMemorial = function() {
+var updatePhelpsLab = function() {
   /*
-    Phelps Memorial Hospital Center's address is incorrect. Find the listing, update it, and then 
+    Phelps Laboratory's address is incorrect. Find the listing, update it, and then 
     log the updated document to the console. 
    */
 };
@@ -27,5 +27,5 @@ var retrieveAllListings = function() {
 
 findLibraryWest();
 removeCable();
-updatePhelpsMemorial();
+updatePhelpsLab();
 retrieveAllListings();
