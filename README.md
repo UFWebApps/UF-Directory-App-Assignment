@@ -71,6 +71,8 @@ Some resources you may find useful:
 - The File System's [readFile() method](https://nodejs.org/api/fs.html#fs_fs_readfile_file_options_callback)
 - [Different MIME Types/File types](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Complete_list_of_MIME_types)
 
+### Test Result
 
+![alt text](./screenshot.png "test result")
 
 
