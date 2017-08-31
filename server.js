@@ -5,6 +5,7 @@ var http = require('http'),
 
 /* Global variables */
 var listingData, server;
+var what;
 
 var requestHandler = function(request, response) {
   var parsedUrl = url.parse(request.url);
