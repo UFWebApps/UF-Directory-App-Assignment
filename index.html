@@ -12,28 +12,35 @@
       <div class="row" ng-controller="ListingsController">
         <div class="col-md-6">
           <div class="input-group" id="searchBar">
-            <!-- 
-
-                Implement a way to filter through listings using the search bar 
-
-              -->
             <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-search"></span></span>
-            <input type="text" class="form-control" placeholder="Search">
+              
+            <!--Create a searchInput to take in the user's entry and create a searchData to go through the Angular function to search-->
+            <input type="text" class="form-control" placeholder="Search" ng-model="searchInput" ng-keyup="searchData()" />
           </div>
           <div class="tableWrapper">
             <table class="table table-striped table-hover">
-              <tr>
-                <th>Code</th>
-                <th>Building Name</th>
-                <th></th>
-              </tr>
-              <!-- 
-
-                  Fill in the rest of the table:
-                      * populate the rows with the code and name of each listing
-                      * include a way to remove individual listings
-
-                --> 
+                <thead>
+                  <tr>
+                    <th>Code</th>
+                    <th>Building Name</th>
+                    <th><button type="addButton" data-toggle="modal" data-target="#addModal">Add</button></th>
+                  </tr>
+                </thead>
+                
+                <!--The tread body with the list results from the listings-->
+                <tbody>
+                    <!--When clicked go to showDetails-->
+                    <tr ng-repeat="list in listings" ng-click="showDetails($index)">
+                      <div>
+                          
+                        <!--Display the Code and Building Name per row-->
+                        <th scope="row">{{list.code}}</th>
+                        <td>{{list.name}}</td>
+                          <!--When clicked go to deleteListing and delete the listing from the list-->
+                         <td><button type="deleteButton" ng-click="deleteListing($index)">Delete</button></td> 
+                      </div>
+                    </tr>
+                </tbody>
             </table>
           </div>
           <!-- 
@@ -41,6 +48,50 @@
               Write an HTML form that adds new listings to the directory 
 
             -->
+        <!-- AddModal -->
+          <div class="modal fade" id="addModal" role="dialog">            
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">New Listing</h4>
+                </div>
+                <div class="modal-main">
+                    <!-- codeBar-->
+                  <div class="input-group" id="codeBar">
+                    <span class="input-group-addon" id="sizing-addon1">Code</span>
+                    <input type="text" class="form-control" placeholder="" ng-model="newCodeInput"/>
+                  </div>
+                  <p></p>
+                    <!-- nameBar-->
+                  <div class="input-group" id="nameBar">
+                    <span class="input-group-addon" id="sizing-addon1">Name</span>
+                    <input type="text" class="form-control" placeholder="" ng-model="newNameInput"/>
+                  </div>
+                  <p></p>
+                    <!-- addressBar-->
+                  <div class="input-group" id="addressBar">
+                    <span class="input-group-addon" id="sizing-addon1">Address</span>
+                    <input type="text" class="form-control" placeholder="" ng-model="newAddressInput"/>
+                  </div>
+                  <p></p>
+                    <!-- latitudeBar-->
+                  <div class="input-group" id="latitudeBar">
+                    <span class="input-group-addon" id="sizing-addon1">Latitude</span>
+                    <input type="text" class="form-control" placeholder="" ng-model="newLatitudeInput"/>
+                  </div>
+                  <p></p>
+                    <!-- longitudeBar-->
+                  <div class="input-group" id="longitudeBar">
+                    <span class="input-group-addon" id="sizing-addon1">Longitude</span>
+                    <input type="text" class="form-control" placeholder="" ng-model="newLongitudeInput"/>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="addButton" data-dismiss="modal" ng-click="addListing()">Add</button>
+                </div>
+              </div>
+              
+          </div>
+
         </div>
         <div class="col-md-6">
           <div class="jumbotron">
@@ -51,6 +102,25 @@
                    * consider how to use ng-click within the the table to implement this feature
 
              -->
+              <!--If the detailedInfo is not empty-->
+            <div ng-if="detailedInfo">
+                <!--If statements for if the building contains each of the parameters for the details then it will display in the details section-->
+              <li ng-if="detailedInfo.code">
+                Code: {{detailedInfo.code}}
+              </li>
+              <li ng-if="detailedInfo.name">
+                Building Name: {{detailedInfo.name}}
+              </li>
+              <li ng-if="detailedInfo.address">
+                Address: {{detailedInfo.address}}
+              </li>
+              <li ng-if="detailedInfo.coordinates.latitude">
+                Latitude: {{detailedInfo.coordinates.latitude}}
+              </li>
+              <li ng-if="detailedInfo.coordinates.longitude">
+                Longitude: {{detailedInfo.coordinates.longitude}}
+              </li>
+            </div>
           </div>
         </div>
       </div>
