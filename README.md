@@ -5,6 +5,8 @@ HTTP (Hypertext Transfer Protocol) is a **stateless** protocol that allows compu
 
 HTTP basically boils down to a *request* and a *response*. A client makes a request to either retreive, add, delete, or modify data in some fashion. The host recieves this request, and will provide an appropriate response back to the client. In our case, the server will handle requests for directory listings by responding with listing data in the [JSON](http://stackoverflow.com/questions/383692/what-is-json-and-why-would-i-use-it) format.
 
+Hey hey hey
+
 ### What is Node.js?
 Node.js is a Javascript runtime environment built on Google's V8 engine. In other terms, it is a program that interprets Javascript. If I made a file named `hello.js` with the line
 ```javascript
