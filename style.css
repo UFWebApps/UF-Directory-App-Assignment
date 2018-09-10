@@ -2,7 +2,48 @@
   margin: 15px 10px;
 }
 
+@font-face {
+    font-family: CenturyGothic;
+    src: url(GOTHIC.ttf);
+}
+
 .tableWrapper {
   max-height: 400px;
   overflow: auto;
+  color: black;
+  font-family: CenturyGothic;
+  border: 3px solid black;
+  background-color: white;
+}
+
+th {
+	font-family: CenturyGothic;
+	font-size: 16px;
+}
+
+body {
+	background-image: url("back.jpg");
+	background-size: 120%;
+	background-position: center;
+	color: black;
+	font-family: CenturyGothic;
+}
+
+h1, h2 {
+	color: black
+}
+
+.jumbotron {
+	font-family: CenturyGothic;
+}
+
+.formSector {
+	background-color: white;
+	border-radius: 5px;
+	padding: 15px;
+	font-family: CenturyGothic;
+}
+
+.jumbotron {
+	padding: 5px;
 }
