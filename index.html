@@ -12,11 +12,6 @@
       <div class="row" ng-controller="ListingsController">
         <div class="col-md-6">
           <div class="input-group" id="searchBar">
-            <!-- 
-
-                Implement a way to filter through listings using the search bar 
-
-              -->
             <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-search"></span></span>
             <input type="text" class="form-control" placeholder="Search">
           </div>
@@ -27,20 +22,32 @@
                 <th>Building Name</th>
                 <th></th>
               </tr>
-              <!-- 
-
-                  Fill in the rest of the table:
-                      * populate the rows with the code and name of each listing
-                      * include a way to remove individual listings
-
-                --> 
+              <<tr ng-repeat="listing in listings | filter:a ng-click="showDetails(listing)">
+                <td>{{listing.code}}</td>
+                <td>{{listing.name}}</td>
+                <td><button class="btn btn-danger" ng-click="deleteListing(listing)">Delete</button></td>
+                <td><button class="btn btn-info" ng-click="showDetails(listing)">Details</button>&nbsp;&nbsp;
+              </tr>
             </table>
           </div>
-          <!-- 
-
-              Write an HTML form that adds new listings to the directory 
-
-            -->
+          <h3>Add New Listing</h3> 
+            <form novalidate>
+              <h4>Code:</h4>
+              <input type="text" ng-model="listing.code" placeholder="Required..." required>
+              <br>
+              <h4>Building Name:</h4>
+              <input type="text" ng-model="listing.name" placeholder="Required..." required>
+              <br>
+              <h4>Coordinates:</h4>
+              <input type="text" ng-model="listing.coordinates.latitude" placeholder="Enter Latitude...">
+              <br>
+              <input type="text" ng-model="listing.coordinates.longitude" placeholder="Enter Longitude...">
+              <br>     
+              <h4>Address:</h4>
+              <input type="text" ng-model="listing.address" placeholder="Enter Address...">
+              <br><br>
+              <button class="btn btn-success" ng-click="addListing()">Add</button>&nbsp;&nbsp;
+            </form>
         </div>
         <div class="col-md-6">
           <div class="jumbotron">
