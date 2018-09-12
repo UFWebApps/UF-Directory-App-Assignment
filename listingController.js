@@ -4,11 +4,25 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
     $scope.detailedInfo = undefined;
 
     /* 
-      Implement these functions in the controller to make your application function 
-      as described in the assignment spec. 
+     
+     
+     
+     
+     
      */
-    $scope.addListing = function() {};
-    $scope.deleteListing = function(index) {};
-    $scope.showDetails = function(index) {};
+    $scope.addListing = function() {
+      if ($scope.listing.code && $scope.listing.name){
+          $scope.listing.code = $scope.listing.code.toUpperCase();
+          $scope.listings.push($scope.listing);
+          $scope.listing = "";
+        }
+    };
+    $scope.deleteListing = function(index) {
+        if($scope.listings[i].code == index.code) {
+            $scope.listings.splice(i, 1);
+        }
+    };
+    $scope.showDetails = function(index) {
+    };
   }
 ]);
