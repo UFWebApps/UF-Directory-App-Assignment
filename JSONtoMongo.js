@@ -21,7 +21,13 @@ fs.readFile('listings.json', 'utf8', function(err, data) {
 
   if (err) throw err;
     listingData = JSON.parse(data).entries;
+  var size = listingData.length;
+   console.log("size is :"+size);
 
+   for(var i = 0;i<size;i++){
+    var bulidingData = new Listing(listingData[i]);
+    bulidingData.save(function(err){
+	 if (err) throw err;
 /* 
   Once you've written + run the script, check out your MongoLab database to ensure that 
   it saved everything correctly. 
