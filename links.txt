@@ -1,0 +1,17 @@
+links.txt
+------------------------------------------
+
+Middleware: 
+https://www.safaribooksonline.com/blog/2014/03/10/express-js-middleware-demystified/
+
+Express Request Object: 
+req.body - http://expressjs.com/en/4x/api.html#req.body
+
+Express Response Object:
+res.json - http://expressjs.com/en/4x/api.html#res.json
+res.send - http://expressjs.com/en/4x/api.html#res.send
+res.status - http://expressjs.com/en/4x/api.html#res.status
+
+
+Services vs factories 
+http://tylermcginnis.com/angularjs-factory-vs-service-vs-provider/
