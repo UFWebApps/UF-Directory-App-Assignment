@@ -43,12 +43,23 @@ exports.update = function(req, res) {
   /** TODO **/
   /* Replace the article's properties with the new properties found in req.body */
   /* Save the article */
+   listing.findOneAndUpdate({name:req.params.name}, req.body, function (err, listing) {
+   	if(err) {
+      res.status(404).send(err);
+    } 
+   	else res.send(listing);
+   });
 };
 
 /* Delete a listing */
 exports.delete = function(req, res) {
   var listing = req.listing;
-
+  listing.findOneAndRemove({name:req.params.name}, req.body, function (err, listing) {
+  	if(err) {
+      res.status(404).send(err);
+    } 
+    else console.log("This object will get deleted " + listing);
+   });
   /** TODO **/
   /* Remove the article */
 };
@@ -57,6 +68,14 @@ exports.delete = function(req, res) {
 exports.list = function(req, res) {
   /** TODO **/
   /* Your code here */
+  var listing=req.listing;
+  listing.find({},req.body,function(err,listing){
+  	if(err) {
+      res.status(404).send(err);
+    } 
+  	else console.log("Already get all listings ");
+  });
+
 };
 
 /* 
