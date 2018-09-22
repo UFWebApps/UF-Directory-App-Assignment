@@ -22,7 +22,7 @@ module.exports.init = function() {
   
   /**TODO
   Serve static files */
-  app.use('/', express.static('public'))
+  app.use('/', express.static(__dirname + '/../../client'));
   
 
   /**TODO 
@@ -32,8 +32,8 @@ module.exports.init = function() {
   /**TODO 
   Go to homepage for all routes not specified */ 
   app.all('/*', function(req, res) {
-  res.sendFile('index.html');
-});
+    res.sendFile(path.resolve('client/index.html'));
+  });
 
   return app;
 };  
